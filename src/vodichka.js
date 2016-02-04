@@ -1,4 +1,4 @@
-function Vodichka() {
+function Vodichka(self) {
     return {
     name: name,
     channeledObjects : [],
@@ -27,8 +27,8 @@ function Vodichka() {
           }
         }
         self.vodichka.channeledObjects.forEach(function(obj) {
-          if(obj.vodichka.makers[message]) {
-            obj.vodichka.makers[message].forEach(function(act) {
+          if(obj.object.vodichka.makers[message]) {
+            obj.object.vodichka.makers[message].forEach(function(act) {
               counterManager.add(counterManager);
               var result = act(data);
               answersPromises.push(new Promise(function(resolve, reject) {resolve(result);}));

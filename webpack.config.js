@@ -3,7 +3,10 @@ var webpack = require("webpack");
 module.exports = {
   entry: './entry.js',
   output: {
-    filename: './dst/river.js'
+    filename: './dst/river.js',
+    libraryTarget: "var",
+       // name of the global var: "Foo"
+    library: "Reka"
   },
   loaders: [
     {
@@ -14,8 +17,8 @@ module.exports = {
       }
     }
   ],
-  devtool: "source-map",
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
-  ]
+  devtool: "source-map"
+//  plugins: [
+//    new webpack.optimize.UglifyJsPlugin({minimize: true})
+//  ]
 };
