@@ -16,3 +16,19 @@ describe('Reka',
     });
   }
 );
+
+var a = {}
+Reka(a);
+a.vodichkaGo()
+
+var b = new Reka()
+
+b.vodichkaGo()
+
+b.vodichka.manageFlow.really('data', function() { return $.get('/WebRoles/CurrentUserRoles');});
+
+b.vodichka.manageFlow.really('data', function() { return $.get('/WebRoles/CurrentUserRole');});
+
+a.vodichka.makeFlow.to(b)
+
+a.vodichka.manageFlow.request('data',null, function(ans) {console.log(ans)})
