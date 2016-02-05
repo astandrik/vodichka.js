@@ -3,22 +3,24 @@ var webpack = require("webpack");
 module.exports = {
   entry: './entry.js',
   output: {
-    filename: './dst/river.js',
+    filename: './dst/vodichka.js',
     libraryTarget: "var",
-       // name of the global var: "Foo"
-    library: "Reka"
+    library: "WaterSports"
   },
   loaders: [
     {
       test: /\.js?$/,
-      loader: 'babel', // 'babel-loader' is also a legal name to reference
+      loader: 'babel',
       query: {
         presets: ['es2015']
       }
+    },
+    {
+      loader: 'script-loader'
     }
   ],
-  devtool: "source-map"
+  devtool: "source-map",
 //  plugins: [
 //    new webpack.optimize.UglifyJsPlugin({minimize: true})
-//  ]
+  //]
 };

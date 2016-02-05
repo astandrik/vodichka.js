@@ -1,16 +1,16 @@
-function Vodichka(self) {
+function Reka(self) {
     return {
     name: name,
     channeledObjects : [],
     makers: {},
     makeRiver: {
       to: function(obj, name) {
-        self.vodichka.channeledObjects.push({object: obj, name: name});
-        if(!obj.vodichka) {
-          Reka(obj);
-          obj.vodichkaGo();
+        self.reka.channeledObjects.push({object: obj, name: name});
+        if(!obj.reka) {
+          WaterSports.RekaWrapper(obj);
+          obj.rekaGo();
         }
-        obj.vodichka.channeledObjects.push({object: self, name: name});
+        obj.reka.channeledObjects.push({object: self, name: name});
       }
     },
     manageRiver: {
@@ -26,12 +26,14 @@ function Vodichka(self) {
             callback(answers);}
           }
         }
-        self.vodichka.channeledObjects.forEach(function(obj) {
-          if(obj.object.vodichka.makers[message]) {
-            obj.object.vodichka.makers[message].forEach(function(act) {
+        self.reka.channeledObjects.forEach(function(obj) {
+          if(obj.object.reka.makers[message]) {
+            obj.object.reka.makers[message].forEach(function(act) {
               counterManager.add(counterManager);
               var result = act(data);
-              answersPromises.push(new Promise(function(resolve, reject) {resolve(result);}));
+              answersPromises.push(new Promise(function(resolve, reject) {
+                resolve(result);
+              }));
             })
           };
         });
@@ -51,18 +53,18 @@ function Vodichka(self) {
         }
       },
       really: function(message, action) {
-        if(self.vodichka.makers[message]) {
-          self.vodichka.makers[message].push(action);
+        if(self.reka.makers[message]) {
+          self.reka.makers[message].push(action);
         }  else {
-          self.vodichka.makers[message] = [];
-          self.vodichka.makers[message].push(action);
+          self.reka.makers[message] = [];
+          self.reka.makers[message].push(action);
         }
       },
       orly: function(message) {
-        delete self.vodichka.makers[message];
+        delete self.reka.makers[message];
       }
     }
   };
 }
 
-module.exports = Vodichka;
+module.exports = Reka;

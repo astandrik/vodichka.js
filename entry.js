@@ -1,4 +1,3 @@
-var Reka = require('./reka.js')
+var Vodichka = require('./vodichka-dev.js')
 
-
-module.exports = Reka;
+module.exports = Vodichka;
