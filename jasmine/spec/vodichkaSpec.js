@@ -29,7 +29,7 @@ describe('Reka Go', function() {
       b.addPoolReaction('orgazm', function() {return 'sasai';});
       c.addPoolReaction('haha', function() {return 'pahom';});
       d.addPoolReaction('orgazm', function() {return 'zhopa'});
-      debugger;
+      
       pool.emit('orgazm',null, function(answer) {
         expect(answer).toEqual(['sasai', 'zhopa']);
       });
