@@ -29,8 +29,8 @@ describe('Reka Go', function() {
       b.addPoolReaction('orgazm', function() {return 'sasai';});
       c.addPoolReaction('haha', function() {return 'pahom';});
       d.addPoolReaction('orgazm', function() {return 'zhopa'});
-      
-      pool.emit('orgazm',null, function(answer) {
+
+      pool.emit('orgazm','hui', function(answer) {
         expect(answer).toEqual(['sasai', 'zhopa']);
       });
     });

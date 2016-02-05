@@ -179,7 +179,8 @@ var WaterSports =
 	    };
 	  },
 	  emit:function(message, data, callback) {
-	    message = encrypter(message, message);
+	    var stringifiedData = JSON.stringify(data);
+	    encryptedData = encrypter(stringifiedData, message);
 	    WaterSports.RekaWrapper(this);
 	    this.rekaGo();
 	    var self = this;
@@ -191,8 +192,9 @@ var WaterSports =
 	      elem.reka.manageRiver.really(bootstrapMessage, function() {
 	        var answer = [];
 	        elem.reactions.forEach(react => {
-	          if(decrypter(message,react.key)) {
-	            answer.push(react.action(data));
+	          var result = decrypter(encryptedData,react.key);
+	          if(result) {
+	            answer.push(react.action(JSON.parse(result)));
 	          } else {
 	            return null;
 	          }
